@@ -1,7 +1,27 @@
 <%= content_tag :h1, @recipe.name %>
 <%= content_tag :p, "Preparation time: #{@recipe.preparation_time}" %>
 <%= content_tag :p, "Cooking Time: #{@recipe.cooking_time}" %>
-<%= check_box_tag 'public', '1', @recipe.public %>
+<%= content_tag :p, "Instructions: #{@recipe.description}" %>
+<%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch%>
 <%= content_tag :p, "By: #{current_user.name}" %>
-<%= button_to 'Generate shopping list'%>
-<%= button_to 'Add ingredient', %>
+<%= button_to 'Generate shopping list', recipes_path %>
+<%= button_to 'Add ingredient', foods_path%>
+<hr>
+<table>
+  <tr>
+    <th>food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+  <% @recipe.recipe_foods.each do |f| %>
+    <tr>
+      <td><%= f.food.name %></td>
+      <td><%= f.quantity %></td>
+      <td><%= f.food.price %></td>
+      <td>
+        <%= button_to 'Remove', recipe_food_path(@recipe, food), method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>

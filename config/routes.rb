@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'recipes/new', to: 'recipes#new', as: 'recipes_new'
   post 'recipes/new', to: 'recipes#create', as: 'recipes_create'
   get 'recipes/:id', to: 'recipes#show', as: 'recipes_show'
+  patch 'recipes/:id', to: 'recipes#update', as: 'recipes_update'
   delete 'recipes/:id', to: 'recipes#destroy', as: 'delete_recipe'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
