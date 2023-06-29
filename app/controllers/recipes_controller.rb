@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def public
-    @recipes = Recipe.filter_by(public)
+    @recipes = Recipe.where(public: true)
   end
 
   def show
