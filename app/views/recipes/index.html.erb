@@ -1,2 +1,11 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>My recipes</h1>
+<%= content_tag :p, @user.name %>
+<ul>
+<% @recipes.each do |recipe|%>
+  <li>
+    <h3><%= link_to recipe.name, recipe_show_path(recipe.id)%><h3>
+    <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>
+    <%= content_tag :p, recipe.description %>
+  </li>
+<% end %>
+</ul>

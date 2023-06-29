@@ -1,11 +1,8 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:public]
   def index
-    if current_user.nil?
-      redirect_to new_user_session
-    else
       @user = current_user
       @recipes = @user.recipes
-    end
   end
 
   def public
