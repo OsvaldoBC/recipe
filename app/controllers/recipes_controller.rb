@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:public]
   def index
-      @user = current_user
-      @recipes = @user.recipes
+    @user = current_user
+    @recipes = @user.recipes
   end
 
   def public
