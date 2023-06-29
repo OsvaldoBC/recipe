@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'recipes#index', as: 'root'
+  get 'shopping_list', to: 'shopping_list#index', as: 'shopping_list'
+
   get '/foods', to: 'foods#index'
   get '/foods/new', to: 'foods#new', as: 'new_food'
   post '/foods/new', to: 'foods#create', as: 'create_food'
@@ -27,5 +29,4 @@ Rails.application.routes.draw do
   get 'recipes/:id', to: 'recipes#show', as: 'recipes_show'
   delete 'recipes/:id', to: 'recipes#destroy', as: 'delete_recipe'
 
-  get 'shopping_list', to: 'shopping_list#index', as: 'shopping_list'
 end
