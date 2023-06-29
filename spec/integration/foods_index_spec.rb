@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Foods Index', type: :feature do
   before(:each) do
     @user = User.create(name: 'User', email: 'test@test.com', password: 'password',
-    password_confirmation: 'password')
+                        password_confirmation: 'password')
     @food = Food.create(name: 'apple', price: 2, quantity: 1, measurement_unit: 'grams', user: @user)
-    
+
     @user.save!
     visit new_user_session_path
     fill_in 'Email', with: @user.email

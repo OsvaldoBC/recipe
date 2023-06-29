@@ -9,7 +9,7 @@ RSpec.describe 'Add new food', type: :feature do
     fill_in 'Password', with: @user.password
     click_button 'Log in'
     @current_user = @user
-    
+
     visit new_food_path
   end
 

@@ -2,14 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   user = User.create(name: 'User', email: 'test@test.com')
-  subject { Recipe.new(
-    name: 'Recipe', 
-    preparation_time: 5, 
-    cooking_time: 30, 
-    description: 'Recipe Description',
-    public: true, 
-    user: user
-    ) }
+  subject do
+    Recipe.new(
+      name: 'Recipe',
+      preparation_time: 5,
+      cooking_time: 30,
+      description: 'Recipe Description',
+      public: true,
+      user:
+    )
+  end
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid

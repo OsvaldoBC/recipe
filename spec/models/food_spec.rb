@@ -2,13 +2,15 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   let(:user) { User.create(name: 'User', email: 'test@test.com') }
-  subject { Food.new(
+  subject do
+    Food.new(
       name: 'Apple',
       measurement_unit: 'grams',
       price: 1,
       quantity: 10,
-      user: user
-    ) }
+      user:
+    )
+  end
 
   it 'name should be present' do
     subject.name = nil
