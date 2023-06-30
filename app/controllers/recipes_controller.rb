@@ -18,12 +18,11 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new user: current_user, name: params[:name], preparation_time: params[:preparation_time],
-                         cooking_time: params[:cooking_time], description: params[:description], public: false
+    @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
-      redirect_to recipe_show_path(@recipe.id)
+      redirect_to recipes_show_path(@recipe.id)
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -32,5 +31,17 @@ class RecipesController < ApplicationController
     @recipe.destroy
     flash[:success] = 'Recipe delete'
     redirect_to recipes_path
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipes_show_path(@recipe)
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 end
