@@ -1,7 +1,9 @@
-class RecipeFoodController < ApplicationController
+class RecipeFoodsController < ApplicationController
 
   def new
-    @recipe_food = RecipeFood.new
+    @foods = Food.all
+    @curren_recipe_id = params[:id]
+    @recipe_food = RecipeFood.new 
   end
 
   def create

@@ -1,0 +1,12 @@
+<%= content_tag :h1, 'Add ingredients' %>
+
+<%= form_for @recipe_food, url: recipe_food_create_path do |f| %>
+  <%= f.label :foods, 'Select food item' %>
+  <%= f.collection_select  :food_id, @foods, :id, :name %>
+  <br>
+  <%= f.label :quantity, 'Quantity' %>
+  <%= f.number_field :quantity %>
+  <br>
+  
+  <%= f.submit %>
+<% end %>
