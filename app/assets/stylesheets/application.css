@@ -144,3 +144,19 @@ td {
   width: 30%;
 }
 
+.shopping-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+}
+
+.shopping-list-details {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 20px;
+}
