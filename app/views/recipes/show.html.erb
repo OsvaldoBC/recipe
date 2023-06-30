@@ -2,10 +2,12 @@
 <%= content_tag :p, "Preparation time: #{@recipe.preparation_time}" %>
 <%= content_tag :p, "Cooking Time: #{@recipe.cooking_time}" %>
 <%= content_tag :p, "Instructions: #{@recipe.description}" %>
+<%= content_tag :p, "By: #{@recipe.user.name}" %>
+<% if (@recipe.user == current_user) %>
 <%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch%>
-<%= content_tag :p, "By: #{current_user.name}" %>
 <%= button_to 'Generate shopping list', recipes_path(@recipe) %>
 <%= button_to 'Add ingredient', recipe_food_new_path(@recipe), method: :get %>
+<% end %>
 <hr>
 <table>
   <tr>
@@ -19,10 +21,12 @@
       <td><%= rf.food.name %></td>
       <td><%= rf.quantity %></td>
       <td><%= rf.food.price*rf.quantity %></td>
+      <% if (@recipe.user == current_user) %>
       <td>
         <%# <%= button_to 'edit', recipe_food_edit_path(rf) %>
         <%= button_to 'Remove', recipe_food_delete_path(rf), method: :delete %>
       </td>
+      <% end %>
     </tr>
   <% end %>
  
