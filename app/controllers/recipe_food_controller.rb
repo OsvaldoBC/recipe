@@ -1,5 +1,8 @@
 class RecipeFoodController < ApplicationController
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dcb4d96 (add delete recipe from food)
   def new
     @recipe_food = RecipeFood.new
   end
@@ -32,6 +35,9 @@ class RecipeFoodController < ApplicationController
   def recipe_food_params  
     params.require(:recipe_food).permit(:recipe_id, :food_id, :quantity)
   end
+<<<<<<< HEAD
 =======
 >>>>>>> ebab076 (Add create recipes form and display food table for recipe)
+=======
+>>>>>>> dcb4d96 (add delete recipe from food)
 end
