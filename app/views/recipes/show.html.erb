@@ -14,14 +14,24 @@
     <th>Value</th>
     <th>Actions</th>
   </tr>
-  <% @recipe.recipe_foods.each do |f| %>
-    <tr>
-      <td><%= f.food.name %></td>
-      <td><%= f.quantity %></td>
-      <td><%= f.food.price %></td>
-      <td>
-        <%= button_to 'Remove', recipe_food_path(@recipe, food), method: :delete %>
+  <% @recipe.recipe_foods.each do |rf| %>
+   <tr>
+      <td><%= rf.food.name %></td>
+      if editing        
+        <td><%= text_field_tag :quantity, rf.quantity %></td>
+        <td></td>
+        <td>
+          <%= button_to 'submit', recipe_food_update_path(rf), method: :post %>
+        </td>
+      else
+        <td><%= rf.quantity %></td>
+        <td><%= rf.food.price*rf.quantity %></td>
+        <td>
+          <%= button_to 'edit', recipe_food_edit_path(rf) %>
+          <%= button_to 'Remove', recipe_food_delete_path(rf), method: :delete %>
       </td>
+      end 
     </tr>
   <% end %>
 </table>
+ 
