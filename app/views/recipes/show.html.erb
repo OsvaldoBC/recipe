@@ -5,7 +5,7 @@
 <%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch%>
 <%= content_tag :p, "By: #{current_user.name}" %>
 <%= button_to 'Generate shopping list', recipes_path(@recipe) %>
-<%= button_to 'Add ingredient', recipe_food_new_path(@recipe)%>
+<%= button_to 'Add ingredient', recipe_food_new_path(@recipe), method: :get %>
 <hr>
 <table>
   <tr>

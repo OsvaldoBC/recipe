@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete 'recipes/:id', to: 'recipes#destroy', as: 'delete_recipe'
   get'recipe_food/new/:id', to: 'recipe_foods#new', as: 'recipe_food_new'
   post 'recipe_food/new', to: 'recipe_foods#create', as: 'recipe_food_create'
-  delete 'recipe_food/:id', to: 'recipe_food#destroy', as: 'recipe_food_delete'
+  delete 'recipe_food/:id', to: 'recipe_foods#destroy', as: 'recipe_food_delete'
   
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -22,6 +22,5 @@ Rails.application.routes.draw do
   get '/foods/new', to: 'foods#new', as: 'new_food'
   post '/foods/new', to: 'foods#create', as: 'create_food'
   delete '/foods/:id', to: 'foods#destroy', as: 'delete_food'
-
 
 end
