@@ -20,7 +20,7 @@
       <td><%= rf.quantity %></td>
       <td><%= rf.food.price*rf.quantity %></td>
       <td>
-        <%# <%= button_to 'edit', recipe_food_edit_path(rf) %> %>
+        <%# <%= button_to 'edit', recipe_food_edit_path(rf) %>
         <%= button_to 'Remove', recipe_food_delete_path(rf), method: :delete %>
       </td>
     </tr>
