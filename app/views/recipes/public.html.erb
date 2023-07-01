@@ -9,7 +9,7 @@
     </div>
     <div>
     <%= content_tag :p, "Total food items: #{recipe.foods.count}" %>
-    <%= content_tag :p, "Total Price: #{recipe.recipe_foods.map{|f| f.quantity * f.food.price}.sum}"%>
+    <%= content_tag :p, "Total Price: #{recipe.recipe_foods.includes(:food).map{|f| f.quantity * f.food.price}.sum}"%>
     </div>  
   </li>
 <% end %>
