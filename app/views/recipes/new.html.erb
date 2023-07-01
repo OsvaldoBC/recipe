@@ -1,0 +1,23 @@
+<div class = wrapper>
+<%= content_tag :h1, 'New Recipe' %>
+
+<%= form_for @recipe, url: recipes_create_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.label :preparation_time %>
+  <%= f.number_field :preparation_time %>
+  <br>
+  <%= f.label :cooking_time %>
+  <%= f.number_field :cooking_time %>
+  <br>
+  <%= f.submit %>
+<% end %>
+  
+  <% @recipe.errors.messages.each do |key,message|%>
+    <%= content_tag :p, "#{key} #{message}" %>
+<% end %>
+</div>
