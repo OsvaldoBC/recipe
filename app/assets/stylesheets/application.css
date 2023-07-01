@@ -106,7 +106,6 @@ td {
   margin: 20px;
 }
 
-
 .foods-add {
   display: flex;
   justify-content: flex-end;
@@ -127,11 +126,11 @@ li {
   list-style: none;
   border: 2px solid #03254c;
   padding: 1em;
-  margin : 1em;
-  gap:1em;
+  margin: 1em;
+  gap: 1em;
   max-width: 40em;
 }
-  
+
 .link-title {
   text-decoration: none;
   color: black;
