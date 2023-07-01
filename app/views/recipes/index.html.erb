@@ -6,7 +6,7 @@
 
   <ul>
   <% @recipes.each do |recipe|%>
-    <li>
+    <li class="c-li">
       <div>
         <h3><%= link_to recipe.name, recipes_show_path(recipe.id), class: "link-title" %><h3>
         <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>

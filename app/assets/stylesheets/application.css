@@ -120,7 +120,7 @@ td {
   margin: 20px;
 }
 
-li {
+.c-li {
   display: flex;
   flex-direction: row;
   list-style: none;

@@ -2,7 +2,7 @@
 <%= content_tag :h1, 'Public Recipes' %>
 <ul>
 <% @recipes.each do |recipe|%>
-  <li>
+  <li class="c-li">
     <div>
     <h3><%= link_to recipe.name, recipes_show_path(recipe.id), class: "link-title"%><h3>
     <%= content_tag :p, "By: #{recipe.user.name}" %>
