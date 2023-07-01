@@ -5,7 +5,7 @@
 <%= content_tag :p, "By: #{@recipe.user.name}" %>
 <% if (@recipe.user == current_user) %>
 <%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch%>
-<%= button_to 'Generate shopping list', recipes_path(@recipe) %>
+<%= button_to 'Generate shopping list', shopping_list_path, method: :get %>
 <%= button_to 'Add ingredient', recipe_food_new_path(@recipe), method: :get %>
 <% end %>
 <hr>
@@ -19,7 +19,7 @@
   <% @recipe.recipe_foods.each do |rf| %>
    <tr>
       <td><%= rf.food.name %></td>
-      <td><%= rf.quantity %></td>
+    <td><%= "#{rf.quantity} #{rf.food.measurement_unit}" %></td>
       <td><%= rf.food.price*rf.quantity %></td>
       <% if (@recipe.user == current_user) %>
       <td>
