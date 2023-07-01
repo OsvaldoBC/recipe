@@ -1,3 +1,4 @@
+<div class = wrapper>
 <%= content_tag :h1, 'New Recipe' %>
 
 <%= form_for @recipe, url: recipes_create_path do |f| %>
@@ -19,3 +20,4 @@
   <% @recipe.errors.messages.each do |key,message|%>
     <%= content_tag :p, "#{key} #{message}" %>
 <% end %>
+</div>

@@ -1,12 +1,16 @@
-<%= link_to 'Add new recipe', recipes_new_path %>
-<h1>My Recipes</h1>
+<div class = wrapper>
+  <div class = "foods-add">
+  <%= link_to 'Add new recipe', recipes_new_path %>
+  </div>
+  <h1>My Recipes</h1>
 
-<ul>
-<% @recipes.each do |recipe|%>
-  <li>
-    <h3><%= link_to recipe.name, recipes_show_path(recipe.id)%><h3>
-    <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>
-    <%= content_tag :p, recipe.description %>
-  </li>
-<% end %>
-</ul>
+  <ul>
+  <% @recipes.each do |recipe|%>
+    <li>
+      <h3><%= link_to recipe.name, recipes_show_path(recipe.id)%><h3>
+      <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>
+      <%= content_tag :p, recipe.description %>
+    </li>
+  <% end %>
+  </ul>
+</div>

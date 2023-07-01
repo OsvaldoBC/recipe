@@ -20,17 +20,6 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.container {
-  width: 80%;
-  height: 150px;
-  margin: 30px auto;
-  padding: 0 20px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .name_and_btn {
   display: flex;
   flex-direction: column;
@@ -107,7 +96,7 @@ td {
   list-style: none;
 }
 
-.signup-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,41 +106,12 @@ td {
   margin: 20px;
 }
 
-.login-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-}
-
-.foods-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-}
 
 .foods-add {
   display: flex;
   justify-content: flex-end;
   margin: 20px;
   width: 30%;
-}
-
-.shopping-list-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
 }
 
 .shopping-list-details {
