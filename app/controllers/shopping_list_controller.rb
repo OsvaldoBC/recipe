@@ -1,11 +1,11 @@
 class ShoppingListController < ApplicationController
   include ShoppingListHelper
   def index
-    @recipes = Recipe.includes(:recipe_foods).where(user_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id)
     @foods = Food.where(user_id: current_user.id)
 
     @required_foods = @recipes.flat_map do |recipe|
-      recipe.recipe_foods.map do |recipe_food|
+      recipe.recipe_foods.includes(:food).map do |recipe_food|
         food = recipe_food.food
         food[:quantity] = recipe_food.quantity
         food
