@@ -120,3 +120,19 @@ td {
   width: 50%;
   margin: 20px;
 }
+
+li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  border: 2px solid #03254c;
+  padding: 1em;
+  margin : 1em;
+  gap:1em;
+  max-width: 40em;
+}
+  
+.link-title {
+  text-decoration: none;
+  color: black;
+}

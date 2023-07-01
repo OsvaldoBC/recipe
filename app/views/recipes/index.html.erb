@@ -1,15 +1,17 @@
 <div class = wrapper>
+  <h1>My Recipes</h1>
   <div class = "foods-add">
   <%= link_to 'Add new recipe', recipes_new_path %>
   </div>
-  <h1>My Recipes</h1>
 
   <ul>
   <% @recipes.each do |recipe|%>
     <li>
-      <h3><%= link_to recipe.name, recipes_show_path(recipe.id)%><h3>
-      <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>
-      <%= content_tag :p, recipe.description %>
+      <div>
+        <h3><%= link_to recipe.name, recipes_show_path(recipe.id), class: "link-title" %><h3>
+        <%= button_to 'Remove', delete_recipe_path(recipe.id), method: :delete%>
+      </div>
+      <%= content_tag :p, recipe.description.truncate(100) %>
     </li>
   <% end %>
   </ul>
