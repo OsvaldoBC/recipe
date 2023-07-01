@@ -1,14 +1,15 @@
 <div class = wrapper>
 <%= content_tag :h1, @recipe.name %>
-<%= content_tag :p, "Preparation time: #{@recipe.preparation_time}" %>
-<%= content_tag :p, "Cooking Time: #{@recipe.cooking_time}" %>
-<%= content_tag :p, "Instructions: #{@recipe.description}" %>
-<%= content_tag :p, "By: #{@recipe.user.name}" %>
-<% if (@recipe.user == current_user) %>
-<%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch%>
-<%= button_to 'Generate shopping list', shopping_list_path, method: :get %>
-<%= button_to 'Add ingredient', recipe_food_new_path(@recipe), method: :get %>
-<% end %>
+<div class="grid-container">
+  <%= content_tag :p, "Preparation time: #{@recipe.preparation_time}", class: "g-1" %>
+  <%= content_tag :p, "Cooking Time: #{@recipe.cooking_time}", class: "g-2" %>
+  <%= content_tag :p, "Instructions: #{@recipe.description}", class: "g-3" %>
+  <% if (@recipe.user == current_user) %>
+  <%= button_to @recipe.public ? 'Is Public' : 'Is Private', recipes_update_path(@recipe), method: :patch, class: "g-4" %> 
+  <%= button_to 'Generate shopping list', shopping_list_path, method: :get, class: "g-5" %>
+  <%= button_to 'Add ingredient', recipe_food_new_path(@recipe), method: :get, class: "g-6" %>
+  <% end %>
+</div>
 <hr>
 <table>
   <tr>
