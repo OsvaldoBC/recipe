@@ -18,7 +18,7 @@
     <th>Value</th>
     <th>Actions</th>
   </tr>
-  <% @recipe.recipe_foods.each do |rf| %>
+  <% @recipe.recipe_foods.includes(:food).each do |rf| %>
    <tr>
       <td><%= rf.food.name %></td>
     <td><%= "#{rf.quantity} #{rf.food.measurement_unit}" %></td>

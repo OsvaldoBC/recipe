@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def public
-    @recipes = Recipe.where(public: true)
+    @recipes = Recipe.where(public: true).includes(:user)
   end
 
   def show
