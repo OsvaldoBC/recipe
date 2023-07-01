@@ -1,11 +1,17 @@
+<div class = wrapper>
 <%= content_tag :h1, 'Public Recipes' %>
 <ul>
 <% @recipes.each do |recipe|%>
-  <li>
-    <h3><%= link_to recipe.name, recipes_show_path(recipe.id)%><h3>
+  <li class="c-li">
+    <div>
+    <h3><%= link_to recipe.name, recipes_show_path(recipe.id), class: "link-title"%><h3>
     <%= content_tag :p, "By: #{recipe.user.name}" %>
+    </div>
+    <div>
     <%= content_tag :p, "Total food items: #{recipe.foods.count}" %>
     <%= content_tag :p, "Total Price: #{recipe.recipe_foods.map{|f| f.quantity * f.food.price}.sum}"%>
+    </div>  
   </li>
 <% end %>
 </ul>
+</div>

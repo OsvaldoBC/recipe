@@ -20,17 +20,6 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.container {
-  width: 80%;
-  height: 150px;
-  margin: 30px auto;
-  padding: 0 20px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .name_and_btn {
   display: flex;
   flex-direction: column;
@@ -107,27 +96,7 @@ td {
   list-style: none;
 }
 
-.signup-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-}
-
-.login-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-}
-
-.foods-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,19 +113,68 @@ td {
   width: 30%;
 }
 
-.shopping-list-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 20px;
-}
-
 .shopping-list-details {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin: 20px;
+}
+
+.c-li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  border: 2px solid #03254c;
+  padding: 1em;
+  margin: 1em;
+  gap: 1em;
+  max-width: 40em;
+}
+
+.link-title {
+  text-decoration: none;
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  max-width: 40em;
+  margin: 1em;
+  gap: 1em;
+  padding: 1em;
+  border: 2px solid #03254c;
+}
+
+.g-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.g-2 {
+  grid-column: 1/span 2;
+  grid-row: 2;
+}
+
+.g-3 {
+  grid-column: 1/span 2;
+  grid-row: 3;
+}
+
+.g-4 {
+  justify-self: end;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.g-5 {
+  grid-column: 1;
+  grid-row: last-line;
+}
+
+.g-6 {
+  justify-self: end;
+  grid-column: 2;
+  grid-row: last-line;
 }
